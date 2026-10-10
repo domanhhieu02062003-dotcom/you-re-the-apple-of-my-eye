@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffe6ef">
+<title>20/10 — Gửi Em yêu ❤️</title>
+<style>
+  :root { --pink:#e83e73; --deep:#9e174b; --soft:#fff1f6; --ink:#762442; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; overflow-x:hidden; color:var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+      radial-gradient(ellipse at 15% 15%, #fff 0, transparent 34%),
+      radial-gradient(ellipse at 90% 80%, #ffc1d7 0, transparent 35%),
+      linear-gradient(135deg,#ffe7ef,#fff7fa 48%,#ffd3e2);
+  }
+  .sparkles { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0; }
+  .wrap { position:relative; z-index:1; min-height:100vh; display:grid; place-items:center; padding:28px 16px; }
+  .card {
+    width:min(760px,100%); text-align:center; position:relative; overflow:hidden;
+    padding:clamp(28px,6vw,58px) clamp(20px,6vw,64px);
+    border:1px solid #ffffffd9; border-radius:30px;
+    background:linear-gradient(150deg,#ffffffdb,#fff3f8e8);
+    box-shadow:0 22px 70px #b62d6026, inset 0 0 40px #fff;
+    backdrop-filter:blur(8px);
+  }
+  .topline { font:italic 15px/1.6 Georgia,serif; letter-spacing:2px; color:#b64a70; }
+  .flowers { font-size:clamp(32px,7vw,54px); margin:10px 0 4px; filter:drop-shadow(0 5px 5px #ec7a9b3a); }
+  .eyebrow { text-transform:uppercase; letter-spacing:4px; font:12px Arial,sans-serif; color:#c34b76; margin-top:12px; }
+  h1 { margin:8px 0 6px; color:var(--deep); font-size:clamp(45px,10vw,82px); font-weight:normal; font-style:italic; line-height:1.1; text-shadow:0 3px #fff; }
+  .heartline { color:var(--pink); letter-spacing:8px; font-size:23px; margin:10px 0 16px; }
+  h2 { font-weight:normal; font-size:clamp(23px,4vw,32px); margin:8px 0 20px; }
+  .intro { max-width:560px; margin:0 auto; font-size:clamp(16px,2.6vw,19px); line-height:1.9; }
+  .signature { font-style:italic; font-size:clamp(24px,4vw,32px); color:#bd245a; margin:24px 0 28px; }
+  button {
+    border:0; cursor:pointer; color:white; font-size:16px; font-weight:bold;
+    padding:15px 25px; border-radius:999px; background:linear-gradient(100deg,#f65a8a,#d72b66);
+    box-shadow:0 9px 22px #d9366b45; transition:transform .2s,box-shadow .2s;
+  }
+  button:hover { transform:translateY(-2px); box-shadow:0 13px 27px #d9366b55; }
+  button:focus-visible { outline:3px solid #9e174b; outline-offset:4px; }
+  .letter {
+    display:none; text-align:left; margin:25px auto 0; max-width:560px; padding:24px clamp(18px,4vw,34px);
+    border-radius:18px; background:#fffaf5; border:1px solid #f3c6d2;
+    box-shadow:0 7px 24px #b72a5720; animation:rise .7s ease both;
+  }
+  .letter h3 { text-align:center; color:var(--deep); font-size:25px; margin:0 0 16px; }
+  .letter p { font-size:17px; line-height:1.85; margin:10px 0; }
+  .letter .sign { text-align:right; font-style:italic; color:#bd245a; }
+  .controls { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:17px; }
+  .controls button { background:#fff; color:#a52a58; border:1px solid #f2bfd0; box-shadow:none; font-size:14px; padding:10px 15px; }
+  .footer { font:13px Arial,sans-serif; color:#a65b77; margin-top:28px; }
+  .floaty { position:absolute; bottom:-45px; animation:floatUp linear forwards; opacity:.9; user-select:none; }
+  .petal { position:absolute; top:-40px; animation:fall linear forwards; user-select:none; }
+  @keyframes floatUp { to { transform:translateY(-115vh) rotate(360deg); opacity:0; } }
+  @keyframes fall { to { transform:translateY(115vh) rotate(600deg); opacity:.15; } }
+  @keyframes rise { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
+  @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
+</style>
+</head>
+<body>
+<div class="sparkles" id="sparkles" aria-hidden="true"></div>
+<main class="wrap">
+  <section class="card">
+    <div class="topline">Một món quà nhỏ, dành riêng cho em</div>
+    <div class="flowers" aria-hidden="true">🌹 💗 🌹</div>
+    <div class="eyebrow">Ngày Phụ nữ Việt Nam · 20 tháng 10</div>
+    <h1>Em yêu ♡</h1>
+    <div class="heartline">─── ♥ ───</div>
+    <h2>Chúc mừng ngày 20/10!</h2>
+    <p class="intro">
+      Cảm ơn em vì đã xuất hiện trong cuộc sống của anh.
+      Mong em luôn vui vẻ, bình an, mạnh khỏe và gặp thật nhiều điều dịu dàng.
+      Chúc nụ cười luôn ở trên môi em, hôm nay và cả những ngày sau nữa.
+    </p>
+    <div class="signature">Anh thương em nhiều lắm! ♡</div>
+    <button id="openLetter" type="button">♥ &nbsp; Mở món quà của anh &nbsp; →</button>
+    <article class="letter" id="letter">
+      <h3>Gửi Em yêu 💌</h3>
+      <p>Ngày 20/10, anh muốn gửi đến em những lời chúc chân thành nhất.</p>
+      <p>Anh không mong em lúc nào cũng phải mạnh mẽ hay lúc nào cũng vui. Anh chỉ mong em được là chính mình, được yêu thương, được lắng nghe và có thật nhiều ngày bình yên.</p>
+      <p>Cảm ơn em vì đã ở đây và làm cho những điều bình thường của anh trở nên đặc biệt hơn. Nếu có lúc mệt mỏi, mong em nhớ rằng em luôn xứng đáng với những điều tốt đẹp.</p>
+      <p>Chúc cô gái anh thương một ngày 20/10 thật ngọt ngào. Mong rằng chúng ta sẽ còn tạo thêm nhiều kỷ niệm đẹp cùng nhau. ❤️</p>
+      <p class="sign">Thương em,<br>Anh ❤️</p>
+    </article>
+    <div class="controls">
+      <button id="musicButton" type="button">♫ Bật nhạc nền</button>
+      <button id="heartsButton" type="button">♡ Thả thêm trái tim</button>
+    </div>
+    <div class="footer">Dành tặng Em yêu — cô gái đặc biệt trong lòng anh 🌷</div>
+  </section>
+</main>
+<script>
+  const sparkles = document.getElementById('sparkles');
+  const emojis = ['❤️','💕','💗','💖','🌸','🌹','💮'];
+  function floatHeart() {
+    const item = document.createElement('span');
+    item.className = 'floaty';
+    item.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    item.style.left = Math.random() * 100 + 'vw';
+    item.style.fontSize = (16 + Math.random() * 22) + 'px';
+    item.style.animationDuration = (5 + Math.random() * 6) + 's';
+    sparkles.appendChild(item);
+    setTimeout(() => item.remove(), 11500);
+  }
+  function fallingPetal() {
+    const item = document.createElement('span');
+    item.className = 'petal';
+    item.textContent = Math.random() > .5 ? '🌸' : '🌹';
+    item.style.left = Math.random() * 100 + 'vw';
+    item.style.fontSize = (14 + Math.random() * 16) + 'px';
+    item.style.animationDuration = (7 + Math.random() * 7) + 's';
+    sparkles.appendChild(item);
+    setTimeout(() => item.remove(), 14500);
+  }
+  setInterval(floatHeart, 650);
+  setInterval(fallingPetal, 1800);
+
+  document.getElementById('openLetter').addEventListener('click', () => {
+    const letter = document.getElementById('letter');
+    letter.style.display = 'block';
+    document.getElementById('openLetter').textContent = '♡ Món quà dành riêng cho em ♡';
+    for (let i = 0; i < 24; i++) setTimeout(floatHeart, i * 80);
+    letter.scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+  document.getElementById('heartsButton').addEventListener('click', () => {
+    for (let i = 0; i < 35; i++) setTimeout(floatHeart, i * 65);
+  });
+
+  // A gentle synthesized tune: no external audio file is required.
+  let audioCtx = null, musicTimer = null, noteIndex = 0;
+  let musicOn = false;
+  const notes = [523.25,659.25,783.99,659.25,587.33,659.25,523.25,392.00,
+                 440.00,523.25,659.25,523.25,493.88,523.25,440.00,392.00];
+  function playNote(freq) {
+    if (!audioCtx) return;
+    const now = audioCtx.currentTime;
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(freq, now);
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.exponentialRampToValueAtTime(0.07, now + 0.04);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.48);
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    osc.start(now); osc.stop(now + 0.5);
+  }
+  const musicButton = document.getElementById('musicButton');
+  musicButton.addEventListener('click', async () => {
+    if (!audioCtx) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) {
+        alert('Trình duyệt này không hỗ trợ nhạc nền. Bạn hãy thử Chrome hoặc Edge.');
+        return;
+      }
+      audioCtx = new AudioContextClass();
+    }
+    if (audioCtx.state === 'suspended') await audioCtx.resume();
+    musicOn = !musicOn;
+    if (musicOn) {
+      musicButton.textContent = 'Ⅱ Tắt nhạc nền';
+      playNote(notes[noteIndex++ % notes.length]);
+      musicTimer = setInterval(() => playNote(notes[noteIndex++ % notes.length]), 520);
+    } else {
+      musicButton.textContent = '♫ Bật nhạc nền';
+      clearInterval(musicTimer);
+    }
+  });
+</script>
+</body>
+</html>
